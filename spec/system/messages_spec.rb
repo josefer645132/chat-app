@@ -18,6 +18,10 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       expect {
         find('input[name="commit"]').click
       }.not_to change { Message.count }
+<<<<<<< Updated upstream
+=======
+      
+>>>>>>> Stashed changes
       # 元のページに戻ってくることを確認する
       expect(current_path).to eq room_messages_path(@room_user.room)
     end
@@ -32,6 +36,7 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       click_on(@room_user.room.name)
 
       # 値をテキストフォームに入力する
+<<<<<<< Updated upstream
       post = "テスト"
       fill_in 'message_content', with: post
 
@@ -46,6 +51,15 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       # 送信した値がブラウザに表示されていることを確認する
       expect(page).to have_content(post)
       
+=======
+
+      # 送信した値がDBに保存されていることを確認する
+
+      # 投稿一覧画面に遷移していることを確認する
+
+      # 送信した値がブラウザに表示されていることを確認する
+
+>>>>>>> Stashed changes
     end
 
     it '画像の投稿に成功すると、投稿一覧に遷移して、投稿した画像が表示されている' do
@@ -59,6 +73,7 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       image_path = Rails.root.join('public/images/test_image.png')
 
       # 画像選択フォームに画像を添付する
+<<<<<<< Updated upstream
       attach_file('message[image]', image_path, make_visible: true)
 
       # 送信した値がDBに保存されていることを確認する
@@ -72,6 +87,15 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       # 送信した画像がブラウザに表示されていることを確認する
       expect(page).to have_selector("img")
       
+=======
+
+      # 送信した値がDBに保存されていることを確認する
+
+      # 投稿一覧画面に遷移していることを確認する
+
+      # 送信した画像がブラウザに表示されていることを確認する
+
+>>>>>>> Stashed changes
     end
 
     it 'テキストと画像の投稿に成功すること' do
@@ -85,6 +109,7 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       image_path = Rails.root.join('public/images/test_image.png')
 
       # 画像選択フォームに画像を添付する
+<<<<<<< Updated upstream
       attach_file('message[image]', image_path, make_visible: true)
 
       # 値をテキストフォームに入力する
@@ -105,3 +130,17 @@ RSpec.describe "メッセージ投稿機能", type: :system do
     end
   end
 end
+=======
+
+      # 値をテキストフォームに入力する
+
+      # 送信した値がDBに保存されていることを確認する
+
+      # 送信した値がブラウザに表示されていることを確認する
+
+      # 送信した画像がブラウザに表示されていることを確認する
+
+    end
+  end
+end
+>>>>>>> Stashed changes
